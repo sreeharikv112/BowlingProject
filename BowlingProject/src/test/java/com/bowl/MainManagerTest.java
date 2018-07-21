@@ -75,6 +75,15 @@ public class MainManagerTest {
 		inputArrayValues.add(new int[][] { { STRIKE, STRIKE_BUDDY }, { 8, 1 }, { 5, 4 }, { STRIKE, STRIKE_BUDDY },
 				{ 8, 1 }, { 7, 2 }, { 6, 3 }, { 7, 2 }, { 8, SPARE }, { STRIKE, STRIKE, 9 } });
 
+		inputArrayValues.add(new int[][] { { STRIKE, 0 }, { 8, 1 }, { 5, 4 }, { STRIKE, STRIKE_BUDDY },
+			{ 8, 1 }, { 7, 2 }, { 6, 3 }, { 7, 2 }, { 8, SPARE }, { STRIKE, STRIKE, 9 } });
+		
+		inputArrayValues.add(new int[][] { { STRIKE, 0 }, { 8, 1 }, { 5, 4 }, { STRIKE, STRIKE_BUDDY },
+			{ 8, 1 }, { 7, 2 }, { 6, 3 }, { 7, 2 } });
+		
+		inputArrayValues.add(new int[][] { { STRIKE, STRIKE_BUDDY }, { 12, 200 }, { 5, 4 }, { STRIKE, STRIKE_BUDDY },
+			{ 8, 1 }, { 7, 2 }, { 6, 3 }, { 7, 2 }, { 8, SPARE }, { STRIKE, STRIKE, 9 } });
+		
 		outputArrayValues
 				.add(new int[][] { { 19 }, { 28 }, { 47 }, { 56 }, { 73 }, { 80 }, { 99 }, { 108 }, { 117 }, { 136 } });
 		outputArrayValues
@@ -93,7 +102,13 @@ public class MainManagerTest {
 				.add(new int[][] { { 8 }, { 14 }, { 44 }, { 72 }, { 90 }, { 98 }, { 115 }, { 122 }, { 149 }, { 168 } });
 		outputArrayValues
 				.add(new int[][] { { 19 }, { 28 }, { 37 }, { 56 }, { 65 }, { 74 }, { 83 }, { 92 }, { 112 }, { 141 } });
-
+		outputArrayValues
+		.add(new int[][] { { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 } });
+		outputArrayValues
+		.add(new int[][] { { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }});
+		outputArrayValues
+		.add(new int[][] { { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 }, { 0 } });
+		
 		for (int i = 0; i < inputArrayValues.size(); i++) {
 
 			assertArrayEquals(outputArrayValues.get(i), mainManagerObj.calculateScores(inputArrayValues.get(i)));
